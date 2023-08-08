@@ -19,13 +19,13 @@ public class TokenController {
     @Autowired
     UserService userService;
 
-    @GetMapping
+    @GetMapping("/")
     @ResponseStatus(HttpStatus.OK)
     public List<Token> list() {
         return tokenService.listUserTokens(SecurityContext.getUser());
     }
 
-    @PostMapping
+    @PostMapping("/")
     @ResponseStatus(HttpStatus.CREATED)
     public Token create(@RequestBody Map<String, String> body) {
         final String token = body.get("token");
