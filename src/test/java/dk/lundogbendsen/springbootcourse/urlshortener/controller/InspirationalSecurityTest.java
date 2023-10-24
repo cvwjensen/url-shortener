@@ -45,7 +45,7 @@ public class InspirationalSecurityTest {
         when(userService.getUser("cvw")).thenReturn(user);
         final String encodedUsernamePassword = Base64.getEncoder().encodeToString("cvw:pwd".getBytes());
         mockMvc.perform(
-                        MockMvcRequestBuilders.get("/token").header("Authorization", "Basic " + encodedUsernamePassword)
+                        MockMvcRequestBuilders.get("/token/").header("Authorization", "Basic " + encodedUsernamePassword)
                 )
                 .andDo(print())
                 .andExpect(status().isOk())
@@ -58,7 +58,7 @@ public class InspirationalSecurityTest {
         when(userService.getUser("cvw")).thenReturn(user);
         final String encodedUsernamePassword = Base64.getEncoder().encodeToString("cvw:pwdWrong".getBytes());
         mockMvc.perform(
-                        MockMvcRequestBuilders.get("/token")
+                        MockMvcRequestBuilders.get("/token/")
                                 .header("Authorization", "Basic " + encodedUsernamePassword)
                 )
                 .andDo(print())

@@ -59,7 +59,7 @@ public class InspirationalUserControllerTest {
     @Test
     public void testCreateUser() throws Exception {
         mvc.perform(
-                        MockMvcRequestBuilders.post("/user")
+                        MockMvcRequestBuilders.post("/user/")
                                 .contentType(MediaType.APPLICATION_JSON)
                                 .content("{\"username\":\"cvw\", \"password\":\"pwd\"}")
                 )
