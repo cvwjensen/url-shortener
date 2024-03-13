@@ -1,9 +1,9 @@
 package dk.lundogbendsen.springbootcourse.urlshortener.model;
 
-import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import lombok.*;
 
 @Getter
 @Setter
